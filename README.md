@@ -1,5 +1,7 @@
 # yule-tides
 
+A React app that generates tide posters for a given location.
+
 ## Using a different location
 
 In `App.js`, simply update the following:
