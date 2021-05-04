@@ -54,7 +54,7 @@ const TideTableContainer = styled.div`
 `;
 
 const TideContainer = styled.div`
-  width: 5em;
+  width: 5.7em;
 
   margin-left: 2.15em;
 
@@ -132,7 +132,7 @@ const DateContainer = styled.div`
 
 const TidesContainer = styled.div`
   display: flex;
-  min-width: 350px;
+  min-width: 376px;
 `;
 
 const TideDay = ({ tideEntries }) => {
