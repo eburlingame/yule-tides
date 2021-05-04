@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { getTides, getTidesByDay } from "./api";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
+
+import { getTidesByDay } from "./api";
 import styled from "styled-components";
 import dayjs from "dayjs";
 
@@ -25,8 +33,7 @@ const Header = styled.div`
 `;
 
 const HeaderImage = styled.img`
-  margin-top: 0.35in;
-  margin-bottom: 0.05in;
+  margin-bottom: 0.4in;
 
   margin-left: auto;
   margin-right: auto;
@@ -73,12 +80,13 @@ const Time = styled.div`
   font-size: 1.25em;
   font-weight: 500;
   font-style: normal;
-  line-height: 1.1em;
+  line-height: 1.2em;
 `;
 
 const Height = styled.div`
-  color: #777;
-  font-size: 1em;
+  color: #555;
+  font-weight: 400;
+  font-size: 1.25em;
 `;
 
 const roundTens = (number, place) => {
@@ -111,7 +119,7 @@ const TideDayContainer = styled.div`
   align-items: center;
 
   padding: 0.1in 0.1in 0.1in 0.1in;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ddd;
 
   background-color: ${(props) => (props.isWeekend ? "#F9F9F9" : "transparent")};
 `;
@@ -179,12 +187,7 @@ const getMonthName = (month) =>
     .day(1)
     .format("MMMM");
 
-const App = () => {
-  // You can find the station ids from NOAA: https://tidesandcurrents.noaa.gov/map/index.html
-  const stationId = "9445017"; // Port Ludlow, WA
-  const year = 2021;
-  const month = 5;
-
+const Poster = ({ stationId, year, month }) => {
   const leftMonth = month;
   const rightMonth = month + 1;
 
@@ -204,6 +207,41 @@ const App = () => {
         </div>
       </Body>
     </Page>
+  );
+};
+
+const RoutedPoster = () => {
+  const match = useRouteMatch();
+
+  return (
+    <Poster
+      stationId={match.params.stationId}
+      year={parseInt(match.params.year)}
+      month={parseInt(match.params.month)}
+    />
+  );
+};
+
+const App = () => {
+  // You can find the station ids from NOAA: https://tidesandcurrents.noaa.gov/map/index.html
+  const stationId = "9445017"; // Port Ludlow, WA
+
+  return (
+    <Router>
+      <Switch>
+        <Route path="/:stationId/:year/:month/" exact={true}>
+          <RoutedPoster />
+        </Route>
+
+        <Route path="/" exact={false}>
+          <Poster
+            stationId={stationId}
+            year={new Date().getFullYear()}
+            month={new Date().getMonth() + 1}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
