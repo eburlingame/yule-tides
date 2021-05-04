@@ -11,7 +11,7 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   background-color: #fff;
-  padding: 0.5in;
+  // padding: 0.5in;
   box-sizing: border-box;
 
   font-family: adelle, serif;
@@ -23,7 +23,7 @@ const Page = styled.div`
 const Header = styled.div`
   width: 100%;
   text-align: center;
-  margin-bottom: 0.5in;
+  margin-bottom: 0.35in;
 `;
 
 const HeaderImage = styled.img`
@@ -36,6 +36,9 @@ const HeaderImage = styled.img`
 const Body = styled.div`
   display: flex;
   flex-direction: row;
+  padding-left: 0.5in;
+  padding-right: 0.5in;
+  padding-bottom: 0.5in;
 `;
 
 const TideTableContainer = styled.div`
@@ -100,7 +103,7 @@ const Tide = ({ date, height, type }) => {
 };
 
 const TideDayContainer = styled.div`
-  height: 1.75em;
+  height: 1.9em;
 
   display: flex;
   flex-direction: row;
