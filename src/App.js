@@ -7,8 +7,6 @@ import headerImageSrc from "./images/tidesheader.svg";
 import highTideArrowSrc from "./images/HighTideArrow.svg";
 import lowTideArrowSrc from "./images/LowTideArrow.svg";
 
-const PORT_LUDLOW_STATION_ID = "9445017";
-
 const Page = styled.div`
   width: 100%;
   height: 100%;
@@ -178,7 +176,8 @@ const getMonthName = (month) =>
     .format("MMMM");
 
 const App = () => {
-  const stationId = PORT_LUDLOW_STATION_ID;
+  // You can find the station ids from NOAA: https://tidesandcurrents.noaa.gov/map/index.html
+  const stationId = "9445017"; // Port Ludlow, WA
   const year = 2021;
   const month = 5;
 
