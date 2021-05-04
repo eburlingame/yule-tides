@@ -1,4 +1,4 @@
-@import url("https://use.typekit.net/rns2gce.css");
+@import url("https://use.typekit.net/gto5xbw.css");
 
 /* Print as tabloid size */
 #root {
@@ -22,19 +22,12 @@
     margin: auto;
     margin-top: 2em;
     margin-bottom: 5em;
+    overflow: hidden;
   }
 }
 
 body {
   margin: 0px;
   padding: 0px;
-
-  font-size: 11pt;
-  font-family: aktiv-grotesk, sans-serif;
-  font-style: normal;
   background-color: #ddd;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
