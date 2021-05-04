@@ -11,7 +11,6 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   background-color: #fff;
-  // padding: 0.5in;
   box-sizing: border-box;
 
   font-family: adelle, serif;
@@ -23,10 +22,12 @@ const Page = styled.div`
 const Header = styled.div`
   width: 100%;
   text-align: center;
-  margin-bottom: 0.35in;
 `;
 
 const HeaderImage = styled.img`
+  margin-top: 0.35in;
+  margin-bottom: 0.05in;
+
   margin-left: auto;
   margin-right: auto;
 
@@ -112,7 +113,7 @@ const TideDayContainer = styled.div`
   padding: 0.1in 0.1in 0.1in 0.1in;
   border-top: 1px solid #eee;
 
-  background-color: ${(props) => (props.isWeekend ? "#efefef" : "transparent")};
+  background-color: ${(props) => (props.isWeekend ? "#F9F9F9" : "transparent")};
 `;
 
 const DateContainer = styled.div`
@@ -133,7 +134,7 @@ const TideDay = ({ tideEntries }) => {
 
   return (
     <TideDayContainer isWeekend={isWeekend}>
-      <DateContainer>{dayjs(date).format("ddd, MMM D")}</DateContainer>
+      <DateContainer>{dayjs(date).format("ddd D")}</DateContainer>
 
       <TidesContainer>
         {tideEntries.map(({ date, height, type }) => (
@@ -166,8 +167,8 @@ const TideTable = ({ stationId, year, month }) => {
 };
 
 const MonthTitle = styled.div`
-  font-size: 1.5em;
-  font-weight: 700;
+  font-size: 1.75em;
+  font-weight: 600;
   margin-bottom: 0.5em;
 `;
 
@@ -193,11 +194,11 @@ const App = () => {
         <HeaderImage src={headerImageSrc} />
       </Header>
       <Body>
-        <div style={{ flex: 1, marginRight: "0.15in" }}>
+        <div style={{ flex: 1, marginRight: "0.2in" }}>
           <MonthTitle>{getMonthName(leftMonth)}</MonthTitle>
           <TideTable stationId={stationId} year={year} month={leftMonth} />
         </div>
-        <div style={{ flex: 1, marginLeft: "0.15in" }}>
+        <div style={{ flex: 1, marginLeft: "0.2in" }}>
           <MonthTitle>{getMonthName(rightMonth)}</MonthTitle>
           <TideTable stationId={stationId} year={year} month={rightMonth} />
         </div>
