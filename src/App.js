@@ -18,6 +18,7 @@ import lowTideArrowSrc from "./images/LowTideArrow.svg";
 const Page = styled.div`
   width: 100%;
   height: 100%;
+  padding-top: 0.45in;
   background-color: #fff;
   box-sizing: border-box;
 
@@ -33,7 +34,7 @@ const Header = styled.div`
 `;
 
 const HeaderImage = styled.img`
-  margin-bottom: 0.4in;
+  margin-bottom: 0.15in;
 
   margin-left: auto;
   margin-right: auto;
@@ -118,10 +119,10 @@ const TideDayContainer = styled.div`
   flex-direction: row;
   align-items: center;
 
-  padding: 0.1in 0.1in 0.1in 0.1in;
+  padding: 0.09in 0.1in 0.1in 0.1in;
   border-top: 1px solid #ddd;
 
-  background-color: ${(props) => (props.isWeekend ? "#F9F9F9" : "transparent")};
+  background-color: ${(props) => (props.isWeekend ? "#f2f2f2" : "transparent")};
 `;
 
 const DateContainer = styled.div`
@@ -182,7 +183,7 @@ const MonthTitle = styled.div`
 
 const getMonthName = (month) =>
   dayjs()
-    .year(2021)
+    .year(2022)
     .month(month - 1)
     .date(1)
     .format("MMMM");
@@ -191,6 +192,8 @@ const Poster = ({ stationId, year, month }) => {
   const leftMonth = month;
   const rightMonth = month + 1;
 
+  const yearString = `'${year.toString().substring(2, 4)}`;
+
   return (
     <Page>
       <Header>
@@ -198,11 +201,15 @@ const Poster = ({ stationId, year, month }) => {
       </Header>
       <Body>
         <div style={{ flex: 1, marginRight: "0.2in" }}>
-          <MonthTitle>{getMonthName(leftMonth)}</MonthTitle>
+          <MonthTitle>
+            {getMonthName(leftMonth)} {yearString}
+          </MonthTitle>
           <TideTable stationId={stationId} year={year} month={leftMonth} />
         </div>
         <div style={{ flex: 1, marginLeft: "0.2in" }}>
-          <MonthTitle>{getMonthName(rightMonth)}</MonthTitle>
+          <MonthTitle>
+            {getMonthName(rightMonth)} {yearString}
+          </MonthTitle>
           <TideTable stationId={stationId} year={year} month={rightMonth} />
         </div>
       </Body>
