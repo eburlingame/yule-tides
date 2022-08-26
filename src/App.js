@@ -182,9 +182,9 @@ const MonthTitle = styled.div`
 
 const getMonthName = (month) =>
   dayjs()
-    .year(2000)
+    .year(2021)
     .month(month - 1)
-    .day(1)
+    .date(1)
     .format("MMMM");
 
 const Poster = ({ stationId, year, month }) => {
