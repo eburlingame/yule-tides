@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/gto5xbw.css");
 
 /* Print as tabloid size */
-#root {
+#__next {
   width: 11in;
   height: 17in;
 }
@@ -18,7 +18,7 @@
 }
 
 @media screen {
-  #root {
+  #__next {
     margin: auto;
     margin-top: 2em;
     margin-bottom: 5em;
