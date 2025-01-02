@@ -15,6 +15,11 @@
     margin: 0mm;
     padding: 0mm;
   }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
 }
 
 @media screen {
