@@ -9,22 +9,22 @@ A React app that generates tide posters for a given location.
 
 ## Printing
 
-From Firefox, select Print
-
-- Destination: Save to PDF
-- Paper size: Tabloid
-- Scale: 100%
-- Margins: None
-- Print backgrounds: yes
-
-Save as `YulesTides-YYYY-MM.pdf`
-
-Usually printed from Staples: https://www.staples.com/services/printing/copies-documents-printing/
-
-- Paper size: Ledger
-- Scale to fit: No
-- Paper: Basic white, 24lb
-- Color Ink
+1. Open the month you want to print in Firefox, then hit print:
+   - Print options:
+     - Destination: Save to PDF
+     - Scale: 100%
+     - Margins: None
+     - Print backgrounds: Yes
+   - Save as `Tidechart-YYYY-MM.pdf`
+2. Order prints
+   - Usually printed from [Staples](https://www.staples.com/services/printing/copies-documents-printing/)
+   - Select `Simple Print`
+   - Upload the pdf files
+   - Set up print:
+     - Paper size: Ledger
+     - Scale to fit: No
+     - Paper: Basic white, 24lb
+     - Color Ink
 
 ## Running locally
 

@@ -1,6 +1,7 @@
 import Poster from "@/components/Poster";
 import dayjs from "dayjs";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -40,23 +41,31 @@ export default function Home() {
       <div>
         <div
           className="no-print"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{ display: "flex", justifyContent: "space-between" }}
         >
-          <button
-            onClick={() => setDate(dayjs(date).subtract(2, "month").toDate())}
-          >
-            Prev Month
-          </button>
-          <input
-            type="date"
-            value={dayjs(date).format("YYYY-MM-DD")}
-            onChange={(e) =>
-              setDate(dayjs(e.target.value).set("date", 1).toDate())
-            }
-          />
-          <button onClick={() => setDate(dayjs(date).add(2, "month").toDate())}>
-            Next Month
-          </button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button
+              onClick={() => setDate(dayjs(date).subtract(2, "month").toDate())}
+            >
+              Prev Month
+            </button>
+            <input
+              type="date"
+              value={dayjs(date).format("YYYY-MM-DD")}
+              onChange={(e) =>
+                setDate(dayjs(e.target.value).set("date", 1).toDate())
+              }
+            />
+            <button
+              onClick={() => setDate(dayjs(date).add(2, "month").toDate())}
+            >
+              Next Month
+            </button>
+          </div>
+
+          <Link href="/print-directions" style={{ marginLeft: "1em" }}>
+            Directions for printing
+          </Link>
         </div>
 
         <Poster
