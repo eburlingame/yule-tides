@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
       <div>
         <ol>
           <li>
-            Open the <a href="/">month</a> you want to print in Firefox, then
-            hit print:
+            Open the <Link href="/">month</Link> you want to print in Firefox,
+            then hit print:
             <ul>
               <li>
                 Print options:
