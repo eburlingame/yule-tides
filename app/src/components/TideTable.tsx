@@ -28,7 +28,7 @@ const TideTable = ({ stationId, year, month }: TideTableProps) => {
   return (
     <TideTableContainer>
       {tides.map((entries) => (
-        <TideDay tideEntries={entries} />
+        <TideDay key={entries[0].date.toISOString()} tideEntries={entries} />
       ))}
     </TideTableContainer>
   );

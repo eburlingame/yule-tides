@@ -57,7 +57,7 @@ const Tide = ({ date, height, type }: TideProps) => {
 
       <TextBlock>
         <Time>{dayjs(date).format("h:mm") + aOrP}</Time>
-        <Height>{roundTens(height, 1)}'</Height>
+        <Height>{roundTens(height, 1)}&apos;</Height>
       </TextBlock>
     </TideContainer>
   );

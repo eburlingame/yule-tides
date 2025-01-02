@@ -45,7 +45,12 @@ const TideDay = ({ tideEntries }: TideDayProps) => {
         {tideEntries
           .slice(0, Math.min(tideEntries.length, 4))
           .map(({ date, height, type }) => (
-            <Tide date={date} height={height} type={type} />
+            <Tide
+              date={date}
+              key={date.toISOString()}
+              height={height}
+              type={type}
+            />
           ))}
       </TidesContainer>
     </TideDayContainer>
