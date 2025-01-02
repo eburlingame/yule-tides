@@ -54,7 +54,7 @@ jobs:
         run: yarn install
 
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: yarn run build
         env:
           NEXT_PUBLIC_NOAA_TIDE_LOCATION_ID: ${{ secrets.NEXT_PUBLIC_NOAA_TIDE_LOCATION_ID }}
 
